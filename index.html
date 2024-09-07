@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Resume Builder</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Interactive Resume Builder</h1>
+        </div>
+
+        <!-- Resume Form -->
+        <form id="resume-form" class="resume-form">
+            <h2>Fill Out Your Resume</h2>
+
+            <!-- Personal Information -->
+            <fieldset>
+                <legend>Personal Information</legend>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" placeholder="" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="@example.com" required>
+
+                <label for="phone">Phone:</label>
+                <input type="tel" id="phone" name="phone" placeholder="+92" required>
+
+                <label for="profile-picture">Profile Picture:</label>
+                <input type="file" id="profile-picture" name="profile-picture" accept="image/*" required>
+                <img id="profile-pic-preview" src="" alt="Profile Picture" class="profile-pic hidden">
+            </fieldset>
+
+            <!-- Education -->
+            <fieldset id="education-fields">
+                <legend>Education</legend>
+                <div class="education-entry">
+                    <label for="education-degree">Degree:</label>
+                    <input type="text" name="education-degree" placeholder="e.g., B.Sc. in Computer Science" required>
+
+                    <label for="education-school">School:</label>
+                    <input type="text" name="education-school" placeholder="e.g., XYZ University" required>
+
+                    <label for="education-year">Year:</label>
+                    <input type="text" name="education-year" placeholder="e.g., 2020" required>
+                </div>
+                <button type="button" id="add-education" class="add-button">Add Another Education</button>
+            </fieldset>
+
+            <!-- Work Experience -->
+            <fieldset id="work-experience-fields">
+                <legend>Work Experience</legend>
+                <div class="work-entry">
+                    <label for="job-title">Job Title:</label>
+                    <input type="text" name="job-title" placeholder="e.g., Software Engineer" required>
+
+                    <label for="company">Company:</label>
+                    <input type="text" name="company" placeholder="e.g., ABC Company" required>
+
+                    <label for="job-years">Years:</label>
+                    <input type="text" name="job-years" placeholder="e.g., 2021-present" required>
+                </div>
+                <button type="button" id="add-work-experience" class="add-button">Add Another Work Experience</button>
+            </fieldset>
+
+            <!-- Skills -->
+            <fieldset>
+                <legend>Skills</legend>
+                <input type="text" id="skills" name="skills" placeholder="e.g., HTML, CSS, JavaScript" required>
+            </fieldset>
+
+            <!-- Submit Button -->
+            <button type="submit" class="submit-btn">Generate Resume</button>
+        </form>
+
+        <!-- Resume Display -->
+        <div id="resume-display" class="resume-display">
+            <section id="personal-info" class="section-card">
+                <h2>Personal Information</h2>
+                <div id="display-personal-info"></div>
+            </section>
+
+            <section id="education" class="section-card">
+                <h2>Education</h2>
+                <div id="display-education"></div>
+            </section>
+
+            <section id="skills" class="section-card">
+                <h2>Skills</h2>
+                <div id="display-skills"></div>
+            </section>
+
+            <section id="work-experience" class="section-card">
+                <h2>Work Experience</h2>
+                <div id="display-work-experience"></div>
+            </section>
+
+            <div class="buttons">
+                <button id="toggle-skills" class="toggle-btn">Toggle Skills Section</button>
+                <button id="toggle-education" class="toggle-btn">Toggle Education Section</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js" type="module"></script>
+</body>
+</html>
